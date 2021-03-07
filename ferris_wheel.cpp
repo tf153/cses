@@ -41,35 +41,24 @@ Output:
 using namespace std;
 int main()
 {
- long n, x, temp, count = 0, i;
- vector<long> v;
- vector<long>::iterator itr, max;
- cin >> n >> x;
- while (n--)
- {
-  cin >> temp;
-  v.push_back(temp);
- }
- while (!v.empty())
- {
-  max = max_element(v.begin(), v.end());
-  for (i = x - (*max); i >= 1; i--)
-  {
-   itr = find(v.begin(), v.end(), i);
-   if (itr != v.end() && itr != max)
-   {
-    count++;
-    v.erase(max);
-    v.erase(itr);
-    break;
-   }
-   if (i == 1)
-   {
-    count++;
-    v.erase(max);
-   }
-  }
- }
- cout << count;
- return 0;
+    long n, x, temp, count = 0, i;
+    vector<long> v;
+    cin >> n;
+    cin >> x;
+    while (n--)
+    {
+        cin >> temp;
+        v.push_back(temp);
+    }
+    sort(v.begin(), v.end());
+    vector<long>::reverse_iterator ritr = v.rbegin();
+    vector<long>::iterator itr = v.begin();
+    while (v.size() > 1)
+    {
+        if (*ritr + *itr < x)
+        {
+        }
+    }
+    cout << count;
+    return 0;
 }
