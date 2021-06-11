@@ -4,7 +4,7 @@ int main()
 {
     int n, q, u, v;
     cin >> n >> q;
-    int arr[n];
+    int arr[n], min[n];
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
