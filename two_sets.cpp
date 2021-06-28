@@ -10,10 +10,19 @@ int main()
     {
         sum += arr[i] = i + 1;
     }
-    cout << sum << endl;
-    for (int i = 0; i < n; i++)
+    if (sum & 1)
     {
-        cout << arr[i] << ' ';
+        cout << "No";
+        return 0;
     }
+    bool dp[n + 1][sum / 2 + 1];
+    bool possible = subset_sum(arr, sum / 2, dp);
+    if (!possible)
+    {
+        cout << "No";
+        return 0;
+    }
+    cout << "Yes";
+
     return 0;
 }
